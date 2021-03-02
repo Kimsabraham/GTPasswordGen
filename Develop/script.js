@@ -11,4 +11,12 @@
 
 // // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
-function getRandomLower() {}
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
+console.log(getRandomLower());
