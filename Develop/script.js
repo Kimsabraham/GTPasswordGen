@@ -13,6 +13,7 @@
 // generateBtn.addEventListener("click", writePassword);
 
 
+// Array of special chracters 
 var specialCharacters = [
   '@',
   '%',
@@ -38,9 +39,9 @@ var specialCharacters = [
   '_',
   '.'
 ];
-
+// Array of numbers
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
+//Array of lowercase
 var lowerCasedCharacters = [
   'a',
   'b',
@@ -69,7 +70,7 @@ var lowerCasedCharacters = [
   'y',
   'z'
 ];
-// Array of uppercase characters to be included in password
+// Array of uppercase
 var upperCasedCharacters = [
   'A',
   'B',
@@ -98,9 +99,17 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
+
+// prompt asking user how long they would like their password to be, using parseInt to make sure we get a integer number
+function getPasswordOptions() {
+  var length = parseInt(
+    prompt('How long would you like your password to be?')
+  );
+
 // Function to prompt user for password options
 function getPasswordOptions() {
   var length = parseInt(
     prompt('How long would you like your password to be?')
   );
-  
+
+ 
