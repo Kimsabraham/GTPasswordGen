@@ -95,20 +95,44 @@ function getPasswordOptions() {
     alert("Password length must be provided as a number");
     return;
   }
-  // statment that makes sure input is at least 8 or more chracters 
+  // statment that makes sure input is at least 8 or more chracters
   if (length < 8) {
-    alert("Password length must be at least 8 characters");
+    alert("Your password must be at least 8 chractes long! ");
     return;
   }
   // statment makes sure the input is less then 129 chracters
   if (length > 128) {
-    alert("Password length must less than 129 characters");
+    alert("Your password cant be more then 128 chracters! ");
     return;
   }
 
   //true/false statments to confirm password input choices
-  var symbols = confirm("Click OK to confirm including special characters.");
-  var numbers = confirm("Click OK to confirm including numeric characters.");
-  var lower = confirm("Click OK to confirm including lowercase characters.");
-  var upper = confirm("Click OK to confirm including uppercase characters.");
- 
+  var symbols = confirm("Click ok if you want symbols in your password.");
+  var numbers = confirm("Click ok if you want numbers in your password.");
+  var lower = confirm(
+    "Click ok if you want lowercase letters in your password."
+  );
+  var upper = confirm(
+    "Click ok if you want uppercase letters in your password."
+  );
+
+  // this statment exits loop if all password options are cancelled.
+  if (
+    symbols === false &&
+    numbers === false &&
+    lower === false &&
+    upper === false
+  ) {
+    alert("Must select at least one character type");
+    return;
+  }
+  // Object to store user input
+  var passwordDetails = {
+    length: length,
+    symbols: symbols,
+    numbers: numbers,
+    lower: lower,
+    upper: upper,
+  };
+  return passwordDetails;
+}
