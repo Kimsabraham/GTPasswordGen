@@ -127,7 +127,7 @@ function passwordDetails() {
     alert("Must select at least one character type");
     return;
   }
-  // Object to store user input
+  // Object to store user inputs
   var passwordDetails = {
     length: length,
     symbols: symbols,
@@ -143,3 +143,30 @@ function random(array) {
   var randomElement = array[index];
   return randomElement;
 }
+// Function to generate password after storing user inputs
+function generatePassword() {
+  var options = passwordDetails();
+  var result = [];
+  var chracterOptions = [];
+  var assured = [];
+
+  if (options.symbols) {
+    chracterOptions = chracterOptions.concat(symbols);
+    assured.push(random(symbols));
+  }
+
+
+  //conditional statemnts that takes the users inputs into the option var, until the password generates the assured var
+  if (options.numbers) {
+    chracterOptions = chracterOptions.concat(numbers);
+    assured.push(random(numbers));
+  }
+  if (options.lower) {
+    chracterOptions = chracterOptions.concat(lower);
+    assured.push(random(lower));
+  }
+  if (options.upper) {
+    chracterOptions = chracterOptions.concat(upper);
+    assured.push(random(upper));
+  }
+  
