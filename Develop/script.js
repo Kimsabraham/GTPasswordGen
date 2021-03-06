@@ -85,8 +85,9 @@ var upper = [
   "Y",
   "Z",
 ];
+
 // prompt asking user how long they would like their password to be, using parseInt to make sure we get a integer as a input
-function getPasswordOptions() {
+function passwordDetails() {
   var length = parseInt(
     prompt("How many characters would you like your password to contain?")
   );
@@ -135,4 +136,10 @@ function getPasswordOptions() {
     upper: upper,
   };
   return passwordDetails;
+}
+// Function goes into the arrays index and brings a random number and rounds it down and returns the element into the password options
+function random(array) {
+  var index = Math.floor(Math.random() * array.length);
+  var randomElement = array[index];
+  return randomElement;
 }
