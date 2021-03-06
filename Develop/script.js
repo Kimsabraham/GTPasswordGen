@@ -178,4 +178,16 @@ function generatePassword() {
   for (var i = 0; i < assured.length; i++) {
     result[i] = assured[i];
   }
- 
+
+  // joins the results together and makes result into string
+  return result.join("");
+}
+// creates button and listens for event of a click
+var generateBtn = document.querySelector("#generate");
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+generateBtn.addEventListener("click", writePassword);
