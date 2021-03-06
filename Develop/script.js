@@ -155,7 +155,6 @@ function generatePassword() {
     assured.push(random(symbols));
   }
 
-
   //conditional statemnts that takes the users inputs into the option var, until the password generates the assured var
   if (options.numbers) {
     chracterOptions = chracterOptions.concat(numbers);
@@ -169,4 +168,14 @@ function generatePassword() {
     chracterOptions = chracterOptions.concat(upper);
     assured.push(random(upper));
   }
-  
+
+  // loop that takes the random potential variables and combines/concat the possible iuputs.
+  for (var i = 0; i < options.length; i++) {
+    var possibleCharacter = random(chracterOptions);
+    result.push(possibleCharacter);
+  }
+  // adds at least 1 of the assured variables into the password
+  for (var i = 0; i < assured.length; i++) {
+    result[i] = assured[i];
+  }
+ 
